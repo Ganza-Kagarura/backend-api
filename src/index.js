@@ -38,6 +38,7 @@ app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(docs));
 app.use(allRoutes);
 const port = process.env.PORT;
 mongoose.set('strictQuery', true);
- mongoose.connect(`${process.env.MONGODBURL}`, { useNewUrlParser: true, useUnifiedTopology: true });
+ mongoose.connect("mongodb+srv://isaacganza22:Pedegree22@cluster0.icejzoj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", { useNewUrlParser: true, useUnifiedTopology: true });
+//  mongoose.connect(`${process.env.MONGODBURL}`, { useNewUrlParser: true, useUnifiedTopology: true });
  app.listen(4000);
  console.log(`the server is listening at http://localhost:${4000}`);
