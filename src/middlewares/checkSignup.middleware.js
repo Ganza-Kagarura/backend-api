@@ -23,6 +23,7 @@ const validate = joi.object({
 })
 
 const checkEmailOrUsername = (req, res, next) => {
+    console.log("middleware")
     const { email, username } = req.body;
     const { error } = validate.validate( req.body );
     if(error){
