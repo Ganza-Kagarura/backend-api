@@ -6,13 +6,13 @@ class signupControllers {
   static async signupUser(req, res) {
     try {
       let status = false;
-      const { email, username, password, confirmPassword } = req.body;
+      const { email, username, DOB, password, confirmPassword } = req.body;
       const salt = bcrypt.genSaltSync(10);
       const passwordHashed = bcrypt.hashSync(password, salt);
       let passwordMatch = bcrypt.compareSync(confirmPassword, passwordHashed);
       if (passwordMatch) {
         if(username === "Richard") status = true
-        const newUser = new signup({ email, username, password: passwordHashed,admin:status });
+        const newUser = new signup({ email, username, DOB, password: passwordHashed,admin:status });
         await newUser.save()
         response.success(res, 201, "signup complete", newUser);
       } else {

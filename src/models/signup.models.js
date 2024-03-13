@@ -7,8 +7,13 @@ const signupSchema = new mongoose.Schema({
         unipue: true,
         match: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
     },
+
     username: {
         type: String,
+        required: true
+    },
+    DOB : {
+        type: Date,
         required: true
     },
     password: {
